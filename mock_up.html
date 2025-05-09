@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kazmeer Signature | Luxury Fashion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .collection-card {
+            transition: all 0.3s ease;
+        }
+        
+        .collection-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .newsletter-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #000;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold heading-font text-gray-800">KAZMEER SIGNATURE</a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#collections" class="nav-link">Collections</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#shop" class="nav-link">Shop</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-black"><i class="fas fa-search"></i></a>
+                    <a href="#" class="text-gray-700 hover:text-black"><i class="fas fa-user"></i></a>
+                    <a href="#" class="text-gray-700 hover:text-black relative">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </a>
+                </div>
+                
+                <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <div class="px-2 pt-2 pb-4 space-y-2">
+                    <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">Home</a>
+                    <a href="#collections" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">Collections</a>
+                    <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">About</a>
+                    <a href="#shop" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">Shop</a>
+                    <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">Contact</a>
+                    <div class="flex space-x-4 px-3 py-2">
+                        <a href="#" class="text-gray-700 hover:text-black"><i class="fas fa-search"></i></a>
+                        <a href="#" class="text-gray-700 hover:text-black"><i class="fas fa-user"></i></a>
+                        <a href="#" class="text-gray-700 hover:text-black relative">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="heading-font text-5xl md:text-7xl font-bold mb-6">KAZMEER SIGNATURE</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Elevating style with timeless elegance and contemporary design</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#collections" class="bg-black hover:bg-gray-800 text-white px-8 py-3 rounded-full font-medium transition duration-300">Explore</a>
+                <a href="#shop" class="border-2 border-white hover:bg-white hover:text-black text-white px-8 py-3 rounded-full font-medium transition duration-300">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Collections -->
+    <section id="collections" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-4">Our Signature Collections</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Discover our curated selection of premium fashion pieces that define the Kazmeer aesthetic</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Collection 1 -->
+                <div class="collection-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative overflow-hidden h-80">
+                        <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Luxury Suits" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="#" class="bg-white text-black px-6 py-2 rounded-full font-medium">View Collection</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading-font text-xl font-bold mb-2">Elegance Redefined</h3>
+                        <p class="text-gray-600 mb-4">Our premium suit collection crafted from the finest materials</p>
+                        <a href="#" class="text-black font-medium flex items-center">
+                            Shop Now <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Collection 2 -->
+                <div class="collection-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative overflow-hidden h-80">
+                        <img src="https://images.unsplash.com/photo-1554412933-514a83d2f3c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Casual Wear" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="#" class="bg-white text-black px-6 py-2 rounded-full font-medium">View Collection</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading-font text-xl font-bold mb-2">Urban Sophistication</h3>
+                        <p class="text-gray-600 mb-4">Contemporary casual wear that blends comfort with style</p>
+                        <a href="#" class="text-black font-medium flex items-center">
+                            Shop Now <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Collection 3 -->
+                <div class="collection-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative overflow-hidden h-80">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80" alt="Accessories" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <a href="#" class="bg-white text-black px-6 py-2 rounded-full font-medium">View Collection</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="heading-font text-xl font-bold mb-2">Signature Accents</h3>
+                        <p class="text-gray-600 mb-4">Handcrafted accessories to complete your distinguished look</p>
+                        <a href="#" class="text-black font-medium flex items-center">
+                            Shop Now <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <img src="logo" alt="Kazmeer Signature logo" class="w-full rounded-lg shadow-xl">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="heading-font text-3xl md:text-4xl font-bold mb-6">The Kazmeer Signature Story</h2>
+                    <p class="text-gray-600 mb-6">Founded in 2015, Kazmeer Signature emerged from a vision to redefine luxury fashion by blending traditional craftsmanship with contemporary design. Our brand represents more than just clothing—it's a statement of individuality and refined taste.</p>
+                    <p class="text-gray-600 mb-8">Each piece in our collection is meticulously crafted using premium materials sourced from around the world, ensuring unparalleled quality and comfort. We believe in creating fashion that transcends trends, offering timeless elegance for the modern individual.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="bg-gray-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-award text-black text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Premium Quality</h4>
+                                <p class="text-sm text-gray-600">Exceptional materials</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-gray-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-tshirt text-black text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Tailored Fit</h4>
+                                <p class="text-sm text-gray-600">Perfect silhouette</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-gray-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-globe-americas text-black text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Ethical Sourcing</h4>
+                                <p class="text-sm text-gray-600">Sustainable practices</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-gray-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-heart text-black text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Customer Love</h4>
+                                <p class="text-sm text-gray-600">5-star service</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-block bg-black hover:bg-gray-800 text-white px-8 py-3 rounded-full font-medium transition duration-300">Discover Our Process</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-4">Shop The Collection</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Explore our curated selection of signature pieces</p>
+            </div>
+            
+            <div class="flex justify-center mb-10">
+                <div class="flex space-x-2 overflow-x-auto pb-2">
+                    <button class="category-btn px-4 py-2 rounded-full bg-black text-white">All</button>
+                    <button class="category-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100">Suits</button>
+                    <button class="category-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100">Shirts</button>
+                    <button class="category-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100">Pants</button>
+                    <button class="category-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100">Accessories</button>
+                    <button class="category-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100">Footwear</button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80" alt="Product" class="w-full h-80 object-cover">
+                        <div class="absolute top-3 right-3 bg-white rounded-full p-2 shadow-md">
+                            <i class="far fa-heart text-gray-600 hover:text-red-500 cursor-pointer"></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-3 text-center opacity-0 hover:opacity-100 transition duration-300">
+                            <button class="bg-white text-black px-4 py-1 rounded-full text-sm font-medium">Quick Add</button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold mb-1">Signature Leather Belt</h3>
+                        <p class="text-gray-600 text-sm mb-2">Handcrafted Italian leather</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold">$89.99</span>
+                            <div class="flex space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star-half-alt text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736e10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80" alt="Product" class="w-full h-80 object-cover">
+                        <div class="absolute top-3 right-3 bg-white rounded-full p-2 shadow-md">
+                            <i class="far fa-heart text-gray-600 hover:text-red-500 cursor-pointer"></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-3 text-center opacity-0 hover:opacity-100 transition duration-300">
+                            <button class="bg-white text-black px-4 py-1 rounded-full text-sm font-medium">Quick Add</button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold mb-1">Classic Wool Suit</h3>
+                        <p class="text-gray-600 text-sm mb-2">Tailored fit, premium fabric</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold">$349.99</span>
+                            <div class="flex space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1520367445093-50dc08a59d9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Product" class="w-full h-80 object-cover">
+                        <div class="absolute top-3 right-3 bg-white rounded-full p-2 shadow-md">
+                            <i class="far fa-heart text-gray-600 hover:text-red-500 cursor-pointer"></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-3 text-center opacity-0 hover:opacity-100 transition duration-300">
+                            <button class="bg-white text-black px-4 py-1 rounded-full text-sm font-medium">Quick Add</button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold mb-1">Premium Dress Shirt</h3>
+                        <p class="text-gray-600 text-sm mb-2">Egyptian cotton, slim fit</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold">$79.99</span>
+                            <div class="flex space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="far fa-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1026&q=80" alt="Product" class="w-full h-80 object-cover">
+                        <div class="absolute top-3 right-3 bg-white rounded-full p-2 shadow-md">
+                            <i class="far fa-heart text-gray-600 hover:text-red-500 cursor-pointer"></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-3 text-center opacity-0 hover:opacity-100 transition duration-300">
+                            <button class="bg-white text-black px-4 py-1 rounded-full text-sm font-medium">Quick Add</button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold mb-1">Oxford Leather Shoes</h3>
+                        <p class="text-gray-600 text-sm mb-2">Hand-stitched, premium leather</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold">$199.99</span>
+                            <div class="flex space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border-2 border-black hover:bg-black hover:text-white text-black px-8 py-3 rounded-full font-medium transition duration-300">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Hear from our distinguished customers about their Kazmeer Signature experience</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"The attention to detail in Kazmeer's suits is unparalleled. I've never worn anything that fits so perfectly and feels so luxurious."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold">James Wilson</h4>
+                            <p class="text-sm text-gray-600">Corporate Executive</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Every piece I've purchased from Kazmeer Signature has exceeded my expectations. Their customer service is as impeccable as their products."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-sm text-gray-600">Fashion Editor</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1 text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"The leather accessories are truly investment pieces. I've had my Kazmeer wallet for 3 years and it still looks brand new."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold">Michael Chen</h4>
+                            <p class="text-sm text-gray-600">Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-bg py-20 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="heading-font text-3xl md:text-4xl font-bold mb-6">Join The Kazmeer Community</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Subscribe to receive exclusive offers, styling tips, and early access to new collections</p>
+            
+            <form class="max-w-md mx-auto">
+                <div class="flex">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-full focus:outline-none text-black">
+                    <button type="submit" class="bg-black hover:bg-gray-800 px-6 py-3 rounded-r-full font-medium transition duration-300">Subscribe</button>
+                </div>
+            </form>
+            
+            <p class="text-sm mt-4 text-gray-300">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <h2 class="heading-font text-3xl md:text-4xl font-bold mb-6">Get In Touch</h2>
+                    <p class="text-gray-600 mb-8">Have questions about our collections or need styling advice? Our team is here to help you find your perfect Kazmeer Signature look.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-gray-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-black"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Our Flagship Store</h4>
+                                <p class="text-gray-600">123 Fashion Avenue, Suite 100<br>Ibadan, OYO</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-gray-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-black"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Contact Us</h4>
+                                <p class="text-gray-600">+234(0) 703 124 6668<br>hello@kazmeersignature.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-gray-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-clock text-black"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Store Hours</h4>
+                                <p class="text-gray-600">Monday - Friday: 10AM - 8PM<br>Saturday: 10AM - 7PM<br>Sunday: 11AM - 6PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <form class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                                <input type="text" id="first-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                                <input type="text" id="last-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <select id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+                                <option>Select a subject</option>
+                                <option>Product Inquiry</option>
+                                <option>Order Support</option>
+                                <option>Styling Advice</option>
+                                <option>Store Visit</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-md font-medium transition duration-300">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold heading-font mb-4">KAZMEER SIGNATURE</h3>
+                    <p class="text-gray-400 mb-4">Elevating style with timeless elegance and contemporary design since 2015.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Shop</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">New Arrivals</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Best Sellers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Suits</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Shirts</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Accessories</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Customer Service</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Shipping & Returns</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Size Guide</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Care Instructions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">About</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Our Story</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Sustainability</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Store Locator</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">© 2025 Kazmeer Signature/Olami. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+        
+        // Category filter
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryButtons.forEach(btn => {
+                    btn.classList.remove('bg-black', 'text-white');
+                    btn.classList.add('border', 'border-gray-300', 'hover:bg-gray-100');
+                });
+                
+                // Add active class to clicked button
+                button.classList.add('bg-black', 'text-white');
+                button.classList.remove('border', 'border-gray-300', 'hover:bg-gray-100');
+                
+                // Here you would typically filter products based on category
+                // For this demo, we'll just log the category
+                console.log(`Filtering by: ${button.textContent}`);
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (mobileMenu.classList.contains('open')) {
+                        mobileMenu.classList.remove('open');
+                    }
+                }
+            });
+        });
+        
+        // Add to cart animation
+        const addToCartButtons = document.querySelectorAll('.fa-shopping-bag');
+        
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Get the cart count element
+                const cartCount = button.nextElementSibling;
+                let currentCount = parseInt(cartCount.textContent);
+                
+                // Increment count
+                cartCount.textContent = currentCount + 1;
+                
+                // Add animation
+                cartCount.classList.add('animate-bounce');
+                setTimeout(() => {
+                    cartCount.classList.remove('animate-bounce');
+                }, 500);
+                
+                // Here you would typically add the product to cart
+                console.log('Product added to cart');
+            });
+        });
+    </script>
+</body>
+</html>
